@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Configuration from "./components/Configuration";
 import FindNumber from "./components/FindNumber";
 import About from "./components/About";
+import Score from "./components/Score";
 import React from "react";
 
 
@@ -33,6 +34,9 @@ class Routering extends React.Component {
                                 <Link to="/FindNumber">Find number</Link>
                             </li>
                             <li>
+                                <Link to="/Score">Score</Link>
+                            </li>
+                            <li>
                                 <Link to="/About">About</Link>
                             </li>
                         </ul>
@@ -48,6 +52,9 @@ class Routering extends React.Component {
                         </Route>
                         <Route path="/FindNumber">
                             <FindNumber></FindNumber>
+                        </Route>
+                        <Route path="/Score">
+                            <Score/>
                         </Route>
                         <Route path="/About">
                             <About/>

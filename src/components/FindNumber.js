@@ -1,16 +1,26 @@
 import React from "react";
+import {withRouter} from "react-router-dom";
+import {addScore} from "../store/action";
+import {connect} from "react-redux";
+
 class FindNumber extends React.Component{
     numberInt = 0;
     nbFind = 0;
+    counterTry = 0;
     constructor(props) {
         super(props);
-        this.state = { information: ""}
-        this.nbFind = Math.floor(Math.random() * Math.floor(100));
+        this.state = { information: "",
+        name : this.props.user
+        }
+        this.nbFind = Math.floor(Math.random() * Math.floor(3));
     }
     handleSubmit(event) {
         event.preventDefault();
         this.numberInt = event.target[0].value;
+        this.counterTry ++;
         this._game();
+        console.log(this.counterTry)
+        console.log(this.state.name)
     }
     _game(){
         let number = this.numberInt;
@@ -21,6 +31,10 @@ class FindNumber extends React.Component{
         }else {
             this.setState({...this.state, information : "Bravo tu as trouvé"})
             this.nbFind = Math.floor(Math.random() * Math.floor(100));
+            this.props.addScore({
+             name: this.state.name,
+             score: parseInt(this.counterTry)
+             })
         }
     }
     _restart = () => {
@@ -43,4 +57,17 @@ class FindNumber extends React.Component{
         )
     }
 }
-export default FindNumber
+const mapStateToProps = (state) =>{
+    return {
+        user : state.user
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addScore: score => {
+            dispatch(addScore(score))
+        }
+    }
+};
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FindNumber))
