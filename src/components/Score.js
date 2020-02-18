@@ -14,10 +14,10 @@ class Score extends React.Component{
         console.log(this.props.score)
         return (
             <table>
-                <thead><tr><th>Nom</th><th>Score</th></tr></thead><tbody>
+                <thead><tr><th>Nom</th><th>Score</th><th>Nombre Mystere</th></tr></thead><tbody>
 
                         {
-                            this.props.score.map((user, index) => <tr key={index}><td>{user.name}</td><td>{user.score}</td></tr>)
+                            this.props.score.map((user, index) => <tr key={index}><td>{user.name}</td><td>{user.score}</td><td>{user.mysteryNumber}</td></tr>)
                         }
             </tbody>
             </table>

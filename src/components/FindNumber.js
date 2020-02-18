@@ -30,16 +30,17 @@ class FindNumber extends React.Component{
             this.setState({...this.state, information : "C'est plus petit"})
         }else {
             this.setState({...this.state, information : "Bravo tu as trouvé"})
-            this.nbFind = Math.floor(Math.random() * Math.floor(100));
             this.props.addScore({
              name: this.state.name,
-             score: parseInt(this.counterTry)
+             score: parseInt(this.counterTry),
+             mysteryNumber: parseInt(this.nbFind)
              })
+              this.nbFind = Math.floor(Math.random() * Math.floor(3));
         }
     }
     _restart = () => {
         this.setState({...this.state, information : "Oops, tu as perdu, c'était " + this.nbFind});
-        this.nbFind = Math.floor(Math.random() * Math.floor(100));
+        this.nbFind = Math.floor(Math.random() * Math.floor(3));
     }
     render() {
         return (
