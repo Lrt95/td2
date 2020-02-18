@@ -34,12 +34,18 @@ class FindNumber extends React.Component{
              name: this.state.name,
              score: parseInt(this.counterTry),
              mysteryNumber: parseInt(this.nbFind)
-             })
-              this.nbFind = Math.floor(Math.random() * Math.floor(3));
+             });
+            this.nbFind = Math.floor(Math.random() * Math.floor(3));
+            this.counterTry = 0;
         }
     }
     _restart = () => {
         this.setState({...this.state, information : "Oops, tu as perdu, c'était " + this.nbFind});
+        this.props.addScore({
+            name: this.state.name,
+            score: parseInt(-1),
+            mysteryNumber: parseInt(this.nbFind)
+        });
         this.nbFind = Math.floor(Math.random() * Math.floor(3));
     }
     render() {
