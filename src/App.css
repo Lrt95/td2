@@ -32,6 +32,13 @@ th{
     color: red;
 }
 
+ul {
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+}
+
+
 nav li {
     display: inline-block;
     margin: 0.3em;
@@ -90,4 +97,3 @@ label span {
     margin-top: 15px;
     font-size: x-large;
 }
-
