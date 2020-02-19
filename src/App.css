@@ -12,6 +12,38 @@ form{
   padding-left: 50%;
   padding-right: 50%;
 }
+tr{
+  color: #FFFFFF;
+} th{
+  font-size: 40px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+
+}  tr td{
+    font-size: 40px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+  }
+   p{
+     -webkit-transition-duration: 500ms; /*durée d'animation*/
+     transition-duration: 500ms; /*durée d'animation*/
+     font-size: 60px;
+     margin: 5px;
+     padding: 5px;
+     text-align: center;
+     color: #FFFFFF;
+   }
+   span:nth-child(2n):hover{
+     -webkit-transition-duration: 0.3s; /*durée d'animation*/
+     transition-duration: 0.3s; /*durée d'animation*/
+     font-family: emoji, serif;
+     font-size: 65px;
+     color: #946afb;
+   }
+
+
 
  button{
    -webkit-transition-duration: 2s; /*durée d'animation*/

@@ -9,7 +9,12 @@ class Home extends React.Component{
     }
     render() {
         return (
-            <p>Hello {this.props.user} !</p>
+            <p>
+                <span>Hello</span>
+                <span> {this.props.user}</span>
+                <span>!</span>
+            </p>
+
         );
     }
 }
