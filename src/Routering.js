@@ -4,6 +4,7 @@ import Configuration from "./components/Configuration";
 import FindNumber from "./components/FindNumber";
 import About from "./components/About";
 import React from "react";
+import "./App.css";
 
 
 class Routering extends React.Component {

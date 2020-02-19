@@ -1,16 +1,17 @@
 import React from "react";
 export default class About extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {nameTab: ["Sarah ", "Antony ", "Lucas ", "Eddy ", "Houssam "]}
-    }
     render() {
         return (
+
             <div>
-                {
-                    this.state.nameTab.map(i => <option value={i} key={i} > {i} </option>)
-                }
-            </div>
-        )
+                <h2> Membres du groupe : </h2>
+                <ul>
+                    <li> Lucas Provost </li>
+                    <li> Eddy Marquand </li>
+                    <li> Antony Correia </li>
+                    <li> Sarah Hayat </li>
+                    <li> Houssam Laghzil </li>
+                </ul>
+            </div>)
     }
 }
