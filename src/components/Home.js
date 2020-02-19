@@ -2,6 +2,7 @@ import React from "react";
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 
+
 class Home extends React.Component{
     constructor(props) {
         super(props);
@@ -9,7 +10,7 @@ class Home extends React.Component{
     }
     render() {
         return (
-            <p>Hello {this.props.user} !</p>
+            <h1>Hello <span>{this.props.user}</span> !</h1>
         );
     }
 }

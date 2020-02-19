@@ -4,14 +4,15 @@ export default class About extends React.Component{
         return (
 
             <div>
-                <h2> Membres du groupe : </h2>
+            <h2> Membres du groupe : </h2>
                 <ul>
-                    <li> Lucas Provost </li>
-                    <li> Eddy Marquand </li>
-                    <li> Antony Correia </li>
-                    <li> Sarah Hayat </li>
-                    <li> Houssam Laghzil </li>
+                <li> Lucas Provost </li>
+                <li> Eddy Marquand </li>
+                <li> Antony Correia </li>
+                <li> Sarah Hayat </li>
+                <li> Houssam Laghzil </li>
                 </ul>
             </div>)
     }
 }
+

@@ -1,15 +1,14 @@
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
-import Configuration from "./components/Configuration";
+import Config from "./components/Config";
 import FindNumber from "./components/FindNumber";
 import About from "./components/About";
 import Score from "./components/Score";
 import React from "react";
-import "./App.css";
+import "./App.css"
 
 
 class Routering extends React.Component {
-
 
     constructor(props) {
         super(props);
@@ -18,21 +17,20 @@ class Routering extends React.Component {
         }
     }
 
-
     render() {
         return (
             <Router>
                 <div>
                     <nav>
-                        <ul>
+                        <ul >
                             <li>
                                 <Link to="/">Home</Link>
                             </li>
                             <li>
-                                <Link to="/Configuration">Configuration</Link>
+                                <Link to="/Config">Configuration</Link>
                             </li>
                             <li>
-                                <Link to="/FindNumber">Find number</Link>
+                                <Link to="/FindNumber">FindNumber</Link>
                             </li>
                             <li>
                                 <Link to="/Score">Score</Link>
@@ -48,8 +46,8 @@ class Routering extends React.Component {
                         <Route exact path="/">
                             <Home/>
                         </Route>
-                        <Route path="/Configuration">
-                            <Configuration/>
+                        <Route path="/Config">
+                            <Config/>
                         </Route>
                         <Route path="/FindNumber">
                             <FindNumber></FindNumber>
@@ -66,5 +64,4 @@ class Routering extends React.Component {
         )
     }
 }
-
 export default Routering

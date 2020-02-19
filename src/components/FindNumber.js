@@ -10,7 +10,7 @@ class FindNumber extends React.Component{
     constructor(props) {
         super(props);
         this.state = { information: "",
-        name : this.props.user
+            name : this.props.user
         };
         this.nbFind = Math.floor(Math.random() * Math.floor(100));
     }
@@ -29,10 +29,10 @@ class FindNumber extends React.Component{
         }else {
             this.setState({...this.state, information : "Bravo tu as trouvé"})
             this.props.addScore({
-             name: this.state.name,
-             score: parseInt(this.counterTry),
-             mysteryNumber: parseInt(this.nbFind)
-             });
+                name: this.state.name,
+                score: parseInt(this.counterTry),
+                mysteryNumber: parseInt(this.nbFind)
+            });
             this.nbFind = Math.floor(Math.random() * Math.floor(100));
             this.counterTry = 0;
         }
@@ -55,9 +55,11 @@ class FindNumber extends React.Component{
                         <input type="number"  name="number"/>
                     </label>
                     <input type="submit" value="Envoyer" />
-                    <label > {this.state.information}</label>
                 </form>
                 <button onClick={this._restart}>Recommencer</button>
+                <div id="restart">
+                    <label> <span>{this.state.information}</span></label>
+                </div>
             </div>
         )
     }

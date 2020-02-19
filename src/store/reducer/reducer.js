@@ -15,7 +15,7 @@ function reducer(state = initialState, action) {
 
     switch (action.type) {
         case "SET_USER":
-                return {...state, user:  action.user};
+            return {...state, user:  action.user};
 
         case "ADD_SCORE":
             let nextState = {...state, score : [...state.score ,action.score]};
@@ -34,19 +34,19 @@ function reducer(state = initialState, action) {
             if (nextState.score.length > 5){
                 nextState.score.pop();
             }
-            database.ref('/score').set(nextState)
-                .then(response => console.log(response))
-                .catch(error => console.log(error));
+           // database.ref('/score').set(nextState)
+                //.then(response => console.log(response))
+              //  .catch(error => console.log(error));
             return nextState;
 
         case "GET_SCORE":
             let newState;
             console.log('yolo')
-            async function readFirebase () {
-                database.ref('/score').on('value', (snapshot) =>{
-                    return  {...state, score : [snapshot.val()]};
-                });
-            }
+        async function readFirebase () {
+            database.ref('/score').on('value', (snapshot) =>{
+                return  {...state, score : [snapshot.val()]};
+            });
+        }
             console.log(newState);
 
 

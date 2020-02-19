@@ -2,7 +2,7 @@ import React from "react";
 import Routering from "./Routering";
 import {Provider} from "react-redux";
 import {createStore} from "redux";
-import reducer from "./store/reducer/reducer";
+import reducer from "./store/reducer/Reducer";
 import {getScore} from "./store/action";
 
 
@@ -15,13 +15,13 @@ export default class App extends React.Component{
         store.dispatch(getScore());
     }
 
-  render() {
-    return (
-        <Provider store={store}>
-          <Routering/>
-        </Provider>
-    );
-  }
+    render() {
+        return (
+            <Provider store={store}>
+                <Routering/>
+            </Provider>
+        );
+    }
 }
 
 

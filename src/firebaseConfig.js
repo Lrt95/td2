@@ -4,6 +4,3 @@ export const DB_CONFIG = {
     databaseURL: "https://react-project-7a699.firebaseio.com/",
     storageBucket: "gs://react-project-7a699.appspot.com/"
 };
-
-
-

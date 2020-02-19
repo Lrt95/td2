@@ -14,4 +14,3 @@ export function addScore(score){
 export function getScore() {
     return {type: GET_SCORE}
 }
-
