@@ -16,7 +16,7 @@ h1 span {
 
 h2 {
     font-size: 2em;
-    color: #a181bf;
+    color: red;
 }
 
 div div div{
@@ -25,6 +25,7 @@ div div div{
 
 table{
     margin: auto;
+    margin-top: 3em;
 }
 
 th{
@@ -96,4 +97,7 @@ label span {
 #restart{
     margin-top: 15px;
     font-size: x-large;
+}
+form{
+    margin-top: 3em;
 }
