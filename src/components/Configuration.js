@@ -1,5 +1,5 @@
 import React from "react";
-import {addUser} from "../store/action";
+import {setUser} from "../store/action";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 
@@ -10,13 +10,13 @@ class Configuration extends React.Component{
             user : ""
         }
     }
-    addUser(event) {
+    setUser(event) {
         event.preventDefault();
-        this.props.addUser( event.target[0].value);
+        this.props.setUser( event.target[0].value);
     }
     render() {
         return (
-            <form onSubmit={ event => this.addUser(event) }>
+            <form onSubmit={ event => this.setUser(event) }>
                 <label>
                     Prénom:
                     <input type="text"  name="Prénom"/>
@@ -33,8 +33,8 @@ const mapSateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
     return {
-        addUser: user => {
-            dispatch(addUser(user))
+        setUser: user => {
+            dispatch(setUser(user))
         }
     }
 };

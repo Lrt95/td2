@@ -1,15 +1,23 @@
 import React from "react";
+import {withRouter} from "react-router-dom";
+import {addScore} from "../store/action";
+import {connect} from "react-redux";
+
 class FindNumber extends React.Component{
     numberInt = 0;
     nbFind = 0;
+    counterTry = 0;
     constructor(props) {
         super(props);
-        this.state = { information: ""}
+        this.state = { information: "",
+        name : this.props.user
+        };
         this.nbFind = Math.floor(Math.random() * Math.floor(100));
     }
     handleSubmit(event) {
         event.preventDefault();
         this.numberInt = event.target[0].value;
+        this.counterTry ++;
         this._game();
     }
     _game(){
@@ -20,11 +28,22 @@ class FindNumber extends React.Component{
             this.setState({...this.state, information : "C'est plus petit"})
         }else {
             this.setState({...this.state, information : "Bravo tu as trouvé"})
+            this.props.addScore({
+             name: this.state.name,
+             score: parseInt(this.counterTry),
+             mysteryNumber: parseInt(this.nbFind)
+             });
             this.nbFind = Math.floor(Math.random() * Math.floor(100));
+            this.counterTry = 0;
         }
     }
     _restart = () => {
         this.setState({...this.state, information : "Oops, tu as perdu, c'était " + this.nbFind});
+        this.props.addScore({
+            name: this.state.name,
+            score: parseInt(-1),
+            mysteryNumber: parseInt(this.nbFind)
+        });
         this.nbFind = Math.floor(Math.random() * Math.floor(100));
     }
     render() {
@@ -43,4 +62,17 @@ class FindNumber extends React.Component{
         )
     }
 }
-export default FindNumber
+const mapStateToProps = (state) =>{
+    return {
+        user : state.user
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addScore: score => {
+            dispatch(addScore(score))
+        }
+    }
+};
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FindNumber))
