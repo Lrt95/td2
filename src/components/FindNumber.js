@@ -2,6 +2,7 @@ import React from "react";
 import {withRouter} from "react-router-dom";
 import {addScore} from "../store/action";
 import {connect} from "react-redux";
+import {default as firebase} from "firebase";
 
 class FindNumber extends React.Component{
     numberInt = 0;
@@ -13,6 +14,16 @@ class FindNumber extends React.Component{
         name : this.props.user
         };
         this.nbFind = Math.floor(Math.random() * Math.floor(100));
+        firebase.database().ref("/score").on('value', (snap) => {
+            let items = snap.val();
+            for(let item in items) {
+                this.props.addScore({
+                    name: items[item].name,
+                    score: items[item].score,
+                    mysteryNumber: items[item].mysteryNumber
+                })
+            }
+        })
     }
     handleSubmit(event) {
         event.preventDefault();

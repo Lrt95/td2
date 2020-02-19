@@ -1,14 +1,11 @@
-import * as firebase from "firebase";
-import {DB_CONFIG} from "../../firebaseConfig";
+import {default as firebase} from "firebase";
 
 const initialState = {
     user: "",
     score : []
 };
 
-firebase.initializeApp(DB_CONFIG);
 
-const database = firebase.database();
 
 function reducer(state = initialState, action) {
 
@@ -34,22 +31,10 @@ function reducer(state = initialState, action) {
             if (nextState.score.length > 5){
                 nextState.score.pop();
             }
-            database.ref('/score').set(nextState)
+            firebase.database().ref('/score').set(nextState.score)
                 .then(response => console.log(response))
                 .catch(error => console.log(error));
             return nextState;
-
-        case "GET_SCORE":
-            let newState;
-            console.log('yolo')
-            async function readFirebase () {
-                database.ref('/score').on('value', (snapshot) =>{
-                    return  {...state, score : [snapshot.val()]};
-                });
-            }
-            console.log(newState);
-
-
 
         default:
             return state;

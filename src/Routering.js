@@ -5,6 +5,7 @@ import FindNumber from "./components/FindNumber";
 import About from "./components/About";
 import Score from "./components/Score";
 import React from "react";
+import "./App.css"
 
 
 class Routering extends React.Component {
