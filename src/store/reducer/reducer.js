@@ -42,12 +42,12 @@ function reducer(state = initialState, action) {
         case "GET_SCORE":
             let newState;
             console.log('yolo')
-            database.ref('/score').on('value', (snapshot) =>{
-                newState = {...state, score : [snapshot.val()]};
-
-            });
+            async function readFirebase () {
+                database.ref('/score').on('value', (snapshot) =>{
+                    return  {...state, score : [snapshot.val()]};
+                });
+            }
             console.log(newState);
-
 
 
 

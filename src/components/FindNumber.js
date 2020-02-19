@@ -12,7 +12,7 @@ class FindNumber extends React.Component{
         this.state = { information: "",
         name : this.props.user
         };
-        this.nbFind = Math.floor(Math.random() * Math.floor(3));
+        this.nbFind = Math.floor(Math.random() * Math.floor(100));
     }
     handleSubmit(event) {
         event.preventDefault();
@@ -33,7 +33,7 @@ class FindNumber extends React.Component{
              score: parseInt(this.counterTry),
              mysteryNumber: parseInt(this.nbFind)
              });
-            this.nbFind = Math.floor(Math.random() * Math.floor(3));
+            this.nbFind = Math.floor(Math.random() * Math.floor(100));
             this.counterTry = 0;
         }
     }
@@ -44,7 +44,7 @@ class FindNumber extends React.Component{
             score: parseInt(-1),
             mysteryNumber: parseInt(this.nbFind)
         });
-        this.nbFind = Math.floor(Math.random() * Math.floor(3));
+        this.nbFind = Math.floor(Math.random() * Math.floor(100));
     }
     render() {
         return (
