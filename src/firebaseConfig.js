@@ -1,0 +1,9 @@
+export const DB_CONFIG = {
+    apiKey: "AIzaSyCxlHh7MmheNTS8qKNP_KtRQ5XihDHWn8M",
+    authDomain: "react-project-7a699.firebaseapp.com",
+    databaseURL: "https://react-project-7a699.firebaseio.com/",
+    storageBucket: "gs://react-project-7a699.appspot.com/"
+};
+
+
+

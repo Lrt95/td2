@@ -11,7 +11,7 @@ class FindNumber extends React.Component{
         super(props);
         this.state = { information: "",
         name : this.props.user
-        }
+        };
         this.nbFind = Math.floor(Math.random() * Math.floor(3));
     }
     handleSubmit(event) {
@@ -19,8 +19,6 @@ class FindNumber extends React.Component{
         this.numberInt = event.target[0].value;
         this.counterTry ++;
         this._game();
-        console.log(this.counterTry)
-        console.log(this.state.name)
     }
     _game(){
         let number = this.numberInt;

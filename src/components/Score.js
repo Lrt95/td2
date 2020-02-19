@@ -6,16 +6,14 @@ class Score extends React.Component{
 
     constructor(props) {
         super(props);
-
-
+        console.log("component user");
+        console.log(this.props.score);
     }
 
     render() {
-        console.log(this.props.score)
         return (
             <table>
                 <thead><tr><th>Nom</th><th>Score</th><th>Nombre Mystere</th></tr></thead><tbody>
-
                         {
                             this.props.score.map((user, index) => <tr key={index}><td>{user.name}</td><td>{user.score}</td><td>{user.mysteryNumber}</td></tr>)
                         }
